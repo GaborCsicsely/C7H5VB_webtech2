@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Gép Kód</th>
+                    <th>Neve</th>
+                    <th>Gyártó</th>
+                    <th>Fajtája</th>
+                    <th>Leírása</th>
+                    <th>Súlya (kg)</th>
+                    <th>Ár</th>
+                    <th>Elérhetőség</th>
+                    <th>Műveletek</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(computer of computers; track $index) {
+                    <tr>
+                        <td>{{ computer.computerId }}</td>
+                        <td>{{ computer.name }}</td>
+                        <td>{{ computer.madeBy }}</td>
+                        <td>{{ computer.type }}</td>
+                        <td>{{ computer.specs }}</td>
+                        <td>{{ computer.weight }}</td>
+                        <td>{{ computer.price }}</td>
+                        <td>{{ computer.isAvailable }}</td>
+                        <td>
+                            <button class="btn btn-outline-primary"
+                                (click)="goToComputerForm(computer.id)">Módosítás</button>
+                            <button class="btn btn-outline-danger"
+                                (click)="deleteComputer(computer)">Törlés</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

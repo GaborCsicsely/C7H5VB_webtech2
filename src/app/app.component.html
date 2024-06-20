@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" >Számítógép nagyker</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- For Admin -->
+        <ng-container *ngIf="loginType === 'Admin'">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/computer">Számítógépek</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/add-computer">Új Számítógép</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/company">Cégek</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/add-company">Új Cég</a>
+          </li>
+        </ng-container>
+        <!-- For non-Admin -->
+        <ng-container *ngIf="loginType === 'User'">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/user/computer">Számítógépek</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user/add-balance">Egyenleg feltöltése</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="user/transactions">Tranzakciók</a>
+          </li>
+        </ng-container>
+        <button (click)="clearLocalStorage()">Kijelentkezés</button>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

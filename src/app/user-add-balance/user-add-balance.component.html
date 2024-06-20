@@ -1,0 +1,11 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="mb-3 d-flex flex-column align-items-center">
+            <label for="topUpAmount" class="form-label">Feltöltési Összeg</label>
+            <form [formGroup]="myForm">
+                <input type="number" formControlName="topUpAmount" class="form-control mb-3" placeholder="Írjon be egy összeget"> <!-- Add margin bottom -->
+            </form>
+            <button class="btn btn-outline-primary" (click)="requestBalance()">Kérelem Küldése</button>
+        </div>
+    </div>
+</div>

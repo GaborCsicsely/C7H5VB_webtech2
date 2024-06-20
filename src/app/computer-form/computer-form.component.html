@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="computerForm">
+            <div class="mb-3">
+                <label for="computerId" class="form-label">Számítógép kód</label>
+                <input type="text" class="form-control" id="computerId" formControlName="computerId">
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Név</label>
+                <input type="text" class="form-control" id="name" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label for="madeBy" class="form-label">Gyártó</label>
+                <input type="text" class="form-control" id="madeBy" formControlName="madeBy">
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Fajtája</label>
+                <input type="text" class="form-control" id="type" formControlName="type">
+            </div>
+            <div class="mb-3">
+                <label for="specs" class="form-label">Leírása</label>
+                <input type="text" class="form-control" id="specs" formControlName="specs">
+            </div>
+            <div class="mb-3">
+                <label for="weight" class="form-label">Súllya (KG)</label>
+                <input type="text" class="form-control" id="weight" formControlName="weight">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Ára</label>
+                <input type="text" class="form-control" id="price" formControlName="price">
+            </div>
+            <div class="mb-3">
+                <label for="isAvailable" class="form-label">Elérhetősége (0/1)</label>
+                <input type="text" class="form-control" id="isAvailable" formControlName="isAvailable">
+            </div>
+        </form>
+        <div class="text-end">
+            <button class="btn btn-outline-primary" (click)="saveComputer()">Mentés</button>
+        </div>
+    </div>
+</div>

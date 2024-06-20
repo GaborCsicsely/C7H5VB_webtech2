@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Cég ID</th>
+                    <th>Cég Név</th>
+                    <th>Képviselő Neve</th>
+                    <th>Adószám</th>
+                    <th>Cégjegyzékszám</th>
+                    <th>Székhely</th>
+                    <th>Egyenleg</th>
+                    <th>Műveletek</th>
+                    <th>Tranzakciók</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(company of companies; track $index) {
+                    <tr>
+                        <td>{{ company.id }}</td>
+                        <td>{{ company.companyName }}</td>
+                        <td>{{ company.representativesName }}</td>
+                        <td>{{ company.taxNumber }}</td>
+                        <td>{{ company.registrationNumber }}</td>
+                        <td>{{ company.address }}</td>
+                        <td>{{ company.balance }}</td>
+                        <td>
+                            <button class="btn btn-outline-primary"
+                                (click)="goToCompanyForm(company.id)">Módosítás</button>
+                            <button class="btn btn-outline-danger"
+                                (click)="deleteCompany(company)">Törlés</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-primary"
+                                (click)="goToTransactions(company.id)">Tranzakciók</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="computerForm">
+            <div class="mb-3">
+                <label for="computerId" class="form-label">Computer</label>
+                <p id="computerId">{{ computerForm.get('computerId')?.value }}</p>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Név</label>
+                <p id="name">{{ computerForm.get('name')?.value }}</p>
+            </div>
+            <div class="mb-3">
+                <label for="madeBy" class="form-label">Gyártó</label>
+                <p id="madeBy">{{ computerForm.get('madeBy')?.value }}</p>
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Fajtája</label>
+                <p id="type">{{ computerForm.get('type')?.value }}</p>
+            </div>
+            <div class="mb-3">
+                <label for="specs" class="form-label">Leírása</label>
+                <p id="specs">{{ computerForm.get('specs')?.value }}</p>
+            </div>
+            <div class="mb-3">
+                <label for="weight" class="form-label">Súllya (KG)</label>
+                <p id="weight">{{ computerForm.get('weight')?.value }}</p>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Ára</label>
+                <p id="price">{{ computerForm.get('price')?.value }}</p>
+            </div>
+            <div class="mb-3">
+                <label for="forDaysReactive" class="form-label">Mennyit</label>
+                <form [formGroup]="myForm">
+                    <input type="number" formControlName="forDaysReactive" placeholder="Enter number">
+                </form>
+            </div>
+        </form>
+        <div class="text-end">
+            <button class="btn btn-outline-primary" (click)="buyComputer()">Vásárlás</button>
+        </div>
+    </div>
+</div>
